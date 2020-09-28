@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title> Audio Visualizer</title>
+    <link rel="icon" href="/favicon.png">
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/addons/p5.dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/addons/p5.dom.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5@0.7.3/lib/addons/p5.sound.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5@0.7.3/lib/addons/p5.sound.min.js"></script>
+
+    <script src="script.js"></script>
+
+</head>
+<body>
+
+<!--<h1> AUDIO VISUALIZER </h1>-->
+<h1><image src="AV_logo.png"></h1>
+<p> Choose an option to begin the sound visualization! </p>
+<input type="file" id="audioUpload">
+<button class="recordButton" onclick="recordButtonClicked()" id="recordStopButton" title="Click to record audio">record</button>
+<button><label for="audioUpload" class="custom-file-upload" id="uploadButton" onclick="uploadButtonClicked()" title="Click to upload an audio file from your device">upload</label></button>
+<button class="importButton" onclick="importButtonClicked()" id="importButton" title="After uploading an audio file from your device, click to finish the importing process">import</button>
+<button class="playButton" onclick="playButtonClicked()" id="playStopButton" title="Click to play your audio"> play</button>
+<button class="applyButton" id = "applyButton" onclick="applyButtonClicked()" title="Click to apply the edits to your audio"> apply edits</button>
+<button class="saveButton" id = "saveButton" onclick="saveButtonClicked()" title = "Click to save the audio file to your device"> save audio</button>
+
+
+<div class="below-the-canvas">
+    <div class="effects">
+        <h2> EFFECTS </h2>
+        <button onclick="reverbEffect()" id="reverbButton"> reverb (off)</button>
+        <button onclick="volumeUp()"> volume +</button>
+        <button onclick ="volumeDown()"> volume -</button>
+        <button onclick="chorusUp()"> chorus + </button>
+        <button onclick="chorusDown()"> chorus - </button>
+    </div>
+
+    <div class="edits">
+        <h2> EDITS </h2>
+				<button onclick="speedUp()" id= "speedUpBtn"> speed (off) </button>
+        <button onclick="slowDown()" id= "slowDownBtn"> slow (off) </button>
+        <button onclick="trimButtonClicked()"> trim</button>
+    </div>
+</div>
+<br><br>
+
+<footer> ©Google CSSI 2020: Amina El-Ashry, Andres Sevilla, Anna Snyder </footer>
+</body>
+</html>
